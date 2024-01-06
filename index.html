@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: lightgray;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff; /* Add background color as needed */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        img.logo {
+            width: 50%;
+            height: auto;
+            margin:0 auto;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .topnav {
+            background-color: blanchedalmond;
+            overflow: hidden;
+            margin:20px 5px;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container img {
+            width: 30%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        .topnav a.search-icon {
+            float: right; /* Align the search icon to the right */
+        }  
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo edited.png" alt="Logo" class="logo">
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </header>
+
+    <div class="topnav">
+        <a href="Home">Home</a>
+        <a href="About">About</a>
+        <a href="Recipes">Recipes</a>
+        <a href="Contact Us">Queries</a>
+        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+    </div>
+    <div class="container">
+        <img src="SouthIndianindex.png" alt="SouthIndian" border = 3>
+        <h3><a href="SouthIndian.html">South Indian Dishes</a></h3>
+    </div>
+
+    <div class="container">
+        <img src="north indian index.jpg" alt="NorthIndian" border="3">
+        <h3><a href="NorthIndian.html">North Indian Dishes</a></h3>
+    </div>
+
+    <div class="container">
+        <img src="seafood index.jpeg" alt="Seafood" border="3">
+        <h3><a href="Seafood.html">Seafood</a></h3>
+    </div>
+
+    <div class="container">
+        <img src="chicken index.jpeg" alt="Chicken dishes" border="3">
+        <h3><a href="Chicken.html">Chicken Dishes</a></h3>
+    </div>
+
+    <script>
+
+
+    // JavaScript code
+    window.onload = function () {
+        alert('Welcome to Flavour Fusion Recipe Page!');
+    };
+  
+
+        function showSearchAlert() {
+            alert("Search functionality is not implemented yet!");
+        }
+
+         
+         function changeBackgroundColor() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
+
+    
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        
+        const recipesLink = document.querySelector('a[href="Recipes"]');
+        recipesLink.addEventListener('click', changeBackgroundColor);
+        
+        function startImageSlideshow() {
+            const images = [
+                "SouthIndian1.webp",
+                "SouthIndian2.jpeg",
+                "SouthIndian3.jpeg"
+            
+            ];
+
+            let currentImageIndex = 0;
+            const imageElement = document.querySelector('.container img');
+
+            
+            function changeImage() {
+                imageElement.src = images[currentImageIndex];
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+
+            
+            setInterval(changeImage, 3000);
+        }
+
+        
+        window.onload = startImageSlideshow;
+
+    </script>
+</body>
+</html>
+
+
